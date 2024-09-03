@@ -1,0 +1,1 @@
+// Create a component with a text input field and a button. When the component mounts or the button is clicked, automatically focus the text input field using useRef.
