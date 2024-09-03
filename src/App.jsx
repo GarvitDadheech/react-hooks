@@ -4,6 +4,7 @@ import Assignment1 from "./components/useMemo/Assignment1"
 import Assignment2 from "./components/useMemo/Assignment2"
 import Assignment3 from "./components/useMemo/Assignment3"
 import Assignment6 from "./components/useRef/Assignment6"
+import Assignment7 from "./components/useRef/Assignment7"
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
     {/* <Assignment3/> */}
     {/* <Assignment4/> */}
     {/* <Assignment5/> */}
-    <Assignment6/>
+    {/* <Assignment6/> */}
+    <Assignment7/>
     </>
   )
 }
