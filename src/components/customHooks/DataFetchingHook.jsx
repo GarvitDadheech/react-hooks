@@ -17,3 +17,8 @@ function DataFetchingHook() {
         loading: loading
     };
 }
+
+export default function MainComponent() {
+    const { todos, loading } = DataFetchingHook();
+    return loading ? <div>Loading...</div> : <div>todos</div>
+} 
