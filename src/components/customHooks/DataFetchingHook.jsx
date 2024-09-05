@@ -1,15 +1,26 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function DataFetchingHook() {
+function DataFetchingHook(n) {
     const [todos,setTodos] = useState([]);
     const [loading,setLoading] = useState(true);
-    useEffect(() => {
-        axios.get("")
-        .then(res => {
-            setTodos(res.data);
+    function getData() {
+        axios.get("<https://temp.com>")
+          .then(res => {
+            setTodos(res.data.todos);
             setLoading(false);
         })
+          .catch(error => {
+            console.error("Error fetching todos:", error);
+            setLoading(false);
+        });
+    }
+    useEffect(() => {
+        getData();
+        const intervalId = setInterval(() => {
+            getData();
+        }, n * 1000);
+        return () => clearInterval(intervalId);
     },[]);
 
     return {
@@ -18,7 +29,8 @@ function DataFetchingHook() {
     };
 }
 
+
 export default function MainComponent() {
-    const { todos, loading } = DataFetchingHook();
+    const { todos, loading } = DataFetchingHook(5);
     return loading ? <div>Loading...</div> : <div>todos</div>
 } 
