@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function usePointerPositionHook() {
+export default function usePointerPositionHook() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const handleMouseMove = (e) => {
         setPosition({ x: e.clientX, y: e.clientY });
