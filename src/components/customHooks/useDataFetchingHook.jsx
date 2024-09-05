@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function DataFetchingHook(n) {
+function useDataFetchingHook(n) {
     const [todos,setTodos] = useState([]);
     const [loading,setLoading] = useState(true);
     function getData() {
@@ -31,6 +31,6 @@ function DataFetchingHook(n) {
 
 
 export default function MainComponent() {
-    const { todos, loading } = DataFetchingHook(5);
+    const { todos, loading } = useDataFetchingHook(5);
     return loading ? <div>Loading...</div> : <div>todos</div>
 } 
