@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-    {/* <Assignment1/> */}
+    <Assignment1/>
     {/* <Assignment2/> */}
     {/* <Assignment3/> */}
     {/* <Assignment4/> */}
